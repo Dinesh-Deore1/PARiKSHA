@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px;
+      background-color: #ffffff; /* Set a background color for better visibility */
+    }
+
+    .jumbotron {
+      background-color: #343a40; /* Darker shade for better text visibility */
+      color: white;
+      padding: 50px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .jumbotron h2 {
+      font-size: 3.5em; /* Increased font size */
+      font-weight: bold; /* Increased font weight */
+      margin-bottom: 20px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .jumbotron p {
+      font-size: 1.5em; /* Increase font size */
+      margin-bottom: 20px;
+    }
+
+    .jumbotron .lead {
+      font-size: 2em; /* Increase font size */
+      margin-bottom: 20px;
+    }
+
+    .jumbotron strong {
+      color: #ffc107;
+    }
+
+    .jumbotron a {
+      color: white;
+      background-color: #28a745;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1.5em; /* Increase font size */
+    }
+
+    .jumbotron a:hover {
+      opacity: 0.8;
+      text-decoration: none;
+    }
+
+    .online-exam {
+      color: #007bff; /* Bluesish color for "Online Examination System" */
+    }
+
+    .exams-online {
+      color: #212529; /* #212529 color for "Attend your examinations online!" */
+    }
+    
+    .sign-up-now {
+      color: #212529; /* #212529 color for "Sign Up now to start your first online examination" */
+    }
+
+    .footer {
+      background-color: #212529;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  {% include "exam/navbar.html" %}
+  <div class="content">
+    <section id="section-jumbotron" class="jumbotron">
+      <div class="container text-center">
+        <h2 class="display-3 online-exam">Online Examination System</h2>
+        <p class="display-4 d-none d-sm-block exams-online">Attend your examinations online!</p>
+        <p class="lead sign-up-now">Sign Up now to start your first online examination</p>
+        <br><br>
+        <p><strong> Start Your Journey Here:</strong></p>
+        <a href="/student/studentsignup">Sign Up as Student</a>
+      </div>
+    </section>
+  </div>
+  {% include "exam/footer.html" %}
+</body>
+
+</html>

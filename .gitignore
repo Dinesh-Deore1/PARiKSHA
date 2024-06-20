@@ -1,0 +1,31 @@
+# Ignore Python bytecode files
+__pycache__/
+*.py[cod]
+
+# Ignore environment variable files
+.env
+
+# Ignore local database files
+db.sqlite3
+
+# Ignore virtual environment directories
+venv/
+.venv/
+
+# Ignore PyCharm settings
+.idea/
+
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore generated static files (if applicable)
+static/
+
+# Ignore temporary files and logs
+*.log
+*.swp
+*~
+
+# Ignore operating system-specific files
+.DS_Store
+Thumbs.db

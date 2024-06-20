@@ -1,0 +1,32 @@
+<!-- teacher-add-questions.html -->
+
+{% extends 'teacher/teacherbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<head>
+
+</head>
+
+<h2 style="text-align:center; ">Add Questions</h2>
+
+<form method="POST" enctype="multipart/form-data" autocomplete="off" style="margin:100px;margin-top: 0px;">
+    {% csrf_token %}
+    
+    <!-- Display QuestionsForm fields -->
+
+
+    <!-- Add a dropdown for selecting the course -->
+    <div class="form-group">
+        <label for="{{ questionForm.courseID.id_for_label }}">Select Course</label>
+        {{ questionForm.courseID }}
+    </div>
+
+    <!-- Include CSVUploadForm for uploading CSV file -->
+    <h3>Upload CSV File</h3>
+    {{ questionForm.csv_file }}
+
+    <button type="submit" class="btn btn-primary btn-lg rounded-0" style="border-radius: 0%;">Submit Questions</button>
+</form>
+
+<br><br><br><br><br><br>
+{% endblock content %}

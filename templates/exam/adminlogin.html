@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: #adc5df;
+            background: -webkit-linear-gradient(to bottom, #d7d2cc, #adc5df);
+            background: linear-gradient(to bottom, #d7d2cc, #adc5df);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box {
+            width: 500px;
+            padding: 45px;
+            background: #fff;
+            text-align: center;
+            transition: 0.25s;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .box input[type="text"],
+        .box input[type="password"] {
+            border: 2px solid #838383;
+            padding: 10px;
+            width: 250px;
+            margin: 20px auto;
+            outline: none;
+            display: block;
+            text-align: center;
+            background: none;
+            color: #000;
+            transition: 0.25s;
+        }
+
+        .box h1 {
+            color: #424242;
+            font-weight: 500;
+        }
+
+        .box input[type="text"]:focus,
+        .box input[type="password"]:focus {
+            width: 300px;
+            border-color: #c7d7e9;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer styles */
+        footer {
+            width: 100%;
+            background-color: #212529;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    {% include "exam/navbar.html" %}
+    <div class="box">
+        <form method="post">
+            {% csrf_token %}
+            <h1>Admin Login Panel</h1>
+
+            {% render_field form.username class="form-control rounded-0" autocomplete="off" placeholder="Username" %}
+            {% render_field form.password class="form-control rounded-0" autocomplete="off" placeholder="Password" %}
+
+            <input type="submit" class="btn btn-lg btn-primary rounded-0" name="" value="Admin Login">
+        </form>
+    </div>
+
+    <!-- Footer -->
+    {% include "exam/footer.html" %}
+</body>
+
+</html>
